@@ -1,21 +1,17 @@
 pipeline {
     agent any
-
     stages {
         stage('Build') {
             steps {
-                echo 'image build'
+                parallel (
+                    "tomcat" : {
+                        echo 'done'
+                    },
+                    "postgres" : {
+                        echo 'done'
+                    }
+                )
             }
-        }
-        stage('Test'){
-            steps {
-                echo 'test'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'deploy'
-            }
-        }
+        }  
     }
 }
