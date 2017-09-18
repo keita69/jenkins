@@ -6,10 +6,10 @@ pipeline {
                 echo "NG"
                 parallel (
                     "tomcat" : {
-                        echo 'done'
+                        echo 'done!'
                     },
                     "postgres" : {
-                        echo 'done'
+                        echo 'done!'
                     }
                 )
             }
